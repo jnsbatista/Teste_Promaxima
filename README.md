@@ -1,5 +1,5 @@
 # Teste_Promaxima
-
+<!--
 **free_proxy** :
 
 -- necessário Firefox instalado
@@ -21,3 +21,4 @@ Comentários:
 -- rodar o servidor django gasolina
 -- clicar no botão para coletar os dados
 -- para adicionar, deletar ou editar -> usar os botões Add, Delete e Edit, respectivamente.
+-->
