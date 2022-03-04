@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Proxy data list{% endblock %}
+
+{% block content %}
+<div class="col-12 list-div">
+  <h1>Proxy List</h1>
+  <div class="row mb-3">
+    <a class="link-b my-auto mx-auto" href="newproxy">
+      <div class="col-12 my-auto mx-auto add-div pr-3">
+        <i class="fas fa-plus"></i>Add
+      </div>
+    </a>
+    <a class="link-b my-auto mx-auto" href="colectdata">
+      <div class="col-12 my-auto mx-auto add-div">
+        Colect Proxys
+      </div>
+    </a>
+
+    <div class="col-10 mx-auto">
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}> {{message}} </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mx-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr class="Caption">
+            <th>IP Address</th>
+            <th>Port</th>
+            <th>Protocol</th>
+            <th>Anonymity</th>
+            <th>Country</th>
+            <th>Region</th>
+            <th>City</th>
+            <th>Uptime</th>
+            <th>Response</th>
+            <th>Transfer</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for data in datas %}
+          <tr>
+            <td>{{data.ip_address}}</td>
+            <td>{{data.port}}</td>
+            <td>{{data.protocol}}</td>
+            <td>{{data.anonymity}}</td>
+            <td>{{data.country}}</td>
+            <td>{{data.region}}</td>
+            <td>{{data.city}}</td>
+            <td>{{data.uptime}}</td>
+            <td>{{data.response}}</td>
+            <td>{{data.transfer}}</td>
+            <td><a href="delete/{{data.id}}"><i class="fas fa-trash"></i></a></td>
+            <td><a href="edite/{{data.id}}"><i class="fas fa-edit"></i></a></td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}

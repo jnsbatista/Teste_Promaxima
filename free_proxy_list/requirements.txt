@@ -1,0 +1,6 @@
+django
+pillow>=8
+beautifulsoup4
+selenium
+requests
+lxml

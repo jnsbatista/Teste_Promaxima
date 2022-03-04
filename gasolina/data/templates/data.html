@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Lista de dados das gasolinas{% endblock %}
+
+{% block content %}
+<div class="col-12 list-div">
+  <h1>Lista de gasolinas</h1>
+  <div class="row mb-3">
+    <a class="link-b my-auto mx-auto" href="newgasolina">
+      <div class="col-12 my-auto mx-auto add-div pr-3">
+        <i class="fas fa-plus"></i>Add
+      </div>
+    </a>
+    <a class="link-b my-auto mx-auto" href="colectdata">
+      <div class="col-12 my-auto mx-auto add-div">
+        Clique para coletar os dados
+      </div>
+    </a>
+
+    <div class="col-10 mt-3 mx-auto">
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}> {{message}} </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mx-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr class="Caption">
+            <th>Tipo</th>
+            <th>Litro (R$)</th>
+            <th>Ultima Venda (R$)</th>
+            <th>Tempo Ultima Venda</th>
+            <th>Nome da Empresa</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for data in datas %}
+          <tr>
+            <td>{{data.tipo}}</td>
+            <td>{{data.litro}}</td>
+            <td>{{data.ultima_venda}}</td>
+            <td>{{data.tempo_ultima_venda}}</td>
+            <td>{{data.nome_empresa}}</td>
+            <td>{{data.endereco}}</td>
+            <td>{{data.cidade}}</td>
+            <td><a href="delete/{{data.id}}"><i class="fas fa-trash"></i></a></td>
+            <td><a href="edite/{{data.id}}"><i class="fas fa-edit"></i></a></td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
