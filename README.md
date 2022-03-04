@@ -1,10 +1,10 @@
-# Teste Promaxima
+# Teste_Promaxima
 
 ## free_proxy
 
 - necessário Firefox instalado
 - Após rodando a máquina virtual, insta-le requirements.txt (pip install -r requirements.txt)
-- Em ./free_proxy_list/data/views.py, alterar o caminho para o geckodriver.exe (./free_proxy_list/geckodriver.exe) de acordo com seu computador. 
+- Em ./free_proxy_list/data/views.py, alterar o caminho (_CAMINHO_) para o geckodriver.exe (./free_proxy_list/geckodriver.exe) de acordo com seu computador. 
   - Para achar o caminho, no caso do Windows, clique com o **botão direito** em geckodriver.exe -> **propriedades** -> aba **Geral** -> Local
 - Feito isso basta rodar o servidor django do free_proxy
 - Eventualmente, quando clicar no botão Colect Proxys, será necessário passar por uma verificação contra robôs
